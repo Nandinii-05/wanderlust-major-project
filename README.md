@@ -26,11 +26,6 @@ Upload property images via Cloudinary
 Users can add, edit, and delete reviews
 Server-side validation for data integrity
 
-🔎 Search & Filter
-
-Search properties based on keywords
-Filter listings by location, price, etc.
-
 ⚙️ RESTful APIs
 
 Fully structured CRUD operations for listings and reviews
@@ -73,12 +68,10 @@ Passport.js authenticates credentials
 Session is maintained using cookies
 Protected routes require login
 
-🌐 Deployment (Optional)
+🌐 Deployment 
 
-You can deploy the project using:
-Render / Railway / Heroku for backend
-MongoDB Atlas for database
-Cloudinary for media storage
-
+Deployed the project backend on Render
+used MongoDB Atlas for the databse.
+Images stored on cloudinary
 📸 Screenshots
 
