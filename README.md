@@ -64,14 +64,13 @@ Delete review
 🔒 Authentication Flow
 
 User signs up or logs in
-Passport.js authenticates credentials
-Session is maintained using cookies
+Passport.js authenticates credentials,
+Session is maintained using cookies.
 Protected routes require login
 
 🌐 Deployment 
 
-Deployed the project backend on Render
+Deployed the project backend on Render,
 used MongoDB Atlas for the databse.
 Images stored on cloudinary
-📸 Screenshots
 
