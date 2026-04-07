@@ -2,7 +2,7 @@ if(process.env.NODE_ENV != "production"){
   require("dotenv").config();
   
 }
-console.log(process.env.SECRET);
+
 
 
 const express = require("express");
@@ -96,9 +96,8 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
   let { status = 500, message = "Something went wrong" } = err;
-  req.flash("error",message);
-  res.redirect("/listings");
-  // res.status(status).render("error.ejs", { message });
+  req.flash("error", " ");
+  res.status(status).render("error.ejs", { message });
   // // res.status(status).send(message);
 });
 

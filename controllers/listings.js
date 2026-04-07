@@ -1,7 +1,6 @@
 const Listing = require("../models/listing");
 
 module.exports.index = async (req, res) => {
-  console.log("INDEX ROUTE CALLED");
   const allListings = await Listing.find({});
   return res.render("listings/index.ejs", { allListings });
 };
