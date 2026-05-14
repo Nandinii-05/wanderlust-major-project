@@ -1,0 +1,9 @@
+<h2>My Bookings</h2>
+
+<% bookings.forEach(b => { %>
+    <div>
+        <h4><%= b.listing.title %></h4>
+        <p>Status: <%= b.status %></p>
+        <p>Total: <i class="fa-solid fa-indian-rupee-sign"></i><%=b.totalPrice %></p>
+    </div>
+<% }) %>

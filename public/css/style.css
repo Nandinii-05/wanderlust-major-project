@@ -117,3 +117,35 @@ main{
     padding-left: 0;
     padding-right: 0;
 }
+
+.card {
+  border: none;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+.btn-danger {
+  background-color: #ff385c;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #e11d48;
+}
+.btn-success {
+  border-radius: 10px;
+}
+
+.btn {
+  border-radius: 10px;
+  font-weight: 500;
+}
+.card {
+  border-radius: 15px;
+}
+
+img {
+  border-radius: 12px;
+}

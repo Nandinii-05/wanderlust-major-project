@@ -18,10 +18,11 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
-
+const recommendationsRouter = require("./routes/recommendations");
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
+const bookingRouter = require("./routes/booking.js");
 
 
 const dbUrl = process.env.ATLASDB_URL;
@@ -44,7 +45,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
-
+app.use("/api/recommendations", recommendationsRouter);
 const store = MongoStore.create({
   mongoUrl: dbUrl,
   // crypto: {
@@ -79,6 +80,14 @@ passport.use(new LocalStrategy(User.authenticate())); //it is to use static auth
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+mongoose.connection.on("connected", () => {
+  console.log("MongoDB connected successfully");
+});
+
+mongoose.connection.on("error", (err) => {
+  console.log("MongoDB error:", err);
+});
+
 app.use((req,res,next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
@@ -89,6 +98,7 @@ app.use((req,res,next) => {
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
+app.use("/bookings", bookingRouter);
 
 app.get("/", (req,res) => {
   res.redirect("/listings");

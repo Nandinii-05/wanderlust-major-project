@@ -6,6 +6,7 @@ const { isLoggedIn, isOwner, validateListing } = require("../middleware.js");
 const listingController = require("../controllers/listings.js");
 const multer  = require('multer');
 const {storage} = require("../cloudConfig.js");
+const track = require("../utils/trackInteraction");  // already imported — good
 const upload = multer({ storage })
 
 router
@@ -18,12 +19,11 @@ router
     wrapAsync(listingController.createLsiting)
   );
 
-//New Route
 router.get("/new", isLoggedIn, listingController.renderNewForm);
 
 router
   .route("/:id")
-  .get(wrapAsync(listingController.showListing))
+  .get(track("view", 1), wrapAsync(listingController.showListing))  // ← only change
   .put(
     isLoggedIn,
     isOwner,
@@ -37,7 +37,6 @@ router
     wrapAsync(listingController.destroyListing)
   );
 
-//Edit Route
 router.get(
   "/:id/edit",
   isLoggedIn,
