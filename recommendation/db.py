@@ -5,7 +5,7 @@ import os
 load_dotenv()
 
 client = MongoClient(os.getenv("MONGO_URI"))
-db = client[os.getenv("MONGO_DB_NAME", "wanderlust")]
+db = client.get_default_database()
 
 listings_col = db["listings"]        # mongoose lowercases + pluralizes → "listings"
 interactions_col = db["interactions"]
