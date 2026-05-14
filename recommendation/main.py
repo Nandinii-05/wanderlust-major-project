@@ -20,13 +20,7 @@ app.add_middleware(
 
 @app.get("/health")
 def health():
-    count = listings_col.count_documents({})
-    sample = listings_col.find_one()
-
-    return {
-        "count": count,
-        "sample": str(sample)
-    }
+    return {"status": "ok"}
 
 @app.get("/recommendations")
 def recommendations(
