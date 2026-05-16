@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
 
         const { data } = await axios.get(`${REC_SERVICE_URL}/recommendations`, {
             params: { listing_id, location, country, max_price, limit: 20 },
-            timeout: 5000,
+            timeout: 60000,
         });
 
         const { listing_ids } = data;
