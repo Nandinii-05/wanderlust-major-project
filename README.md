@@ -1,76 +1,86 @@
-🏡 WanderLust – Property Listing Platform
-WanderLust is a full-stack web application that allows users to explore, create, and review property listings. It provides a seamless experience for users to browse listings, upload property details with images, and share reviews.
-🚀 Features
+# 🏡 WanderLust – Property Booking Platform
 
-##Screenshots
-<img width="100%" height="629" alt="image" src="https://github.com/user-attachments/assets/4024795d-44e2-4612-91bd-9c5cfd4b1840" />
+**[Live Demo](https://wanderlust-major-project-yz4d.onrender.com/)**
 
-<img width="1360" height="641" alt="image" src="https://github.com/user-attachments/assets/2061c231-ea92-44fd-a9cd-2515e31beb48" />
+WanderLust is a full-stack property booking platform built with a structured backend following **MVC architecture**. It allows users to browse, list, and book properties, leave reviews, and get basic recommendations based on their preferences and interactions.
 
-<img width="1365" height="635" alt="image" src="https://github.com/user-attachments/assets/fbf08986-a89b-4260-bd04-e2b89ad82bcc" />
+---
 
-🔐 User Authentication & Authorization
+## 🚀 Features
 
-Secure login/signup using Passport.js
-Session-based authentication
-Role-based access control
+### 🔐 User Authentication & Authorization
+- Secure login/signup using **Passport.js**
+- Session-based authentication with route handling
+- Role-based access control for protected routes
 
-🏘️ Property Listings
+### 🏘️ Property Listings
+- Create, edit, and delete listings
+- Add property details like title, description, price, and location
+- Upload property images via Cloudinary
 
-Create, edit, and delete listings
-Add property details like title, description, price, and location
-Upload property images via Cloudinary
+### ⭐ Reviews & Recommendations
+- Users can add, edit, and delete reviews
+- Basic recommendation system based on user preferences and interactions
+- Server-side validation for data integrity
 
-⭐ Reviews & Ratings
+### ⚙️ RESTful APIs
+- Fully structured RESTful APIs for listings, bookings, and reviews following CRUD principles
+- Efficient database queries using **Mongoose (ODM)** for optimized data handling
 
-Users can add, edit, and delete reviews
-Server-side validation for data integrity
+---
 
-⚙️ RESTful APIs
+## 🛠️ Tech Stack
 
-Fully structured CRUD operations for listings and reviews
+- **Backend:** Node.js, Express.js
+- **Frontend:** EJS (Embedded JavaScript Templates)
+- **Database:** MongoDB (via Mongoose ODM)
+- **Authentication:** Passport.js
+- **Image Storage:** Cloudinary
+- **Version Control:** Git
 
-🛠️ Tech Stack
+---
 
-Backend: Node.js, Express.js
-Frontend: EJS (Embedded JavaScript Templates)
-Database: MongoDB
-Authentication: Passport.js
-Image Storage: Cloudinary
-Version Control: Git
+## 📌 API Endpoints
 
-📌 API Endpoints
+**Listings**
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/listings` | Get all listings |
+| POST | `/listings` | Create new listing |
+| GET | `/listings/:id` | Get single listing |
+| PUT | `/listings/:id` | Update listing |
+| DELETE | `/listings/:id` | Delete listing |
 
-For listing
+**Reviews**
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/listings/:id/reviews` | Add review |
+| DELETE | `/listings/:id/reviews/:reviewId` | Delete review |
 
-GET /listings
-Get all listings
-POST /listings
-Create new listing
-GET /listings/:id
-Get single listing
-PUT /listings/:id
-Update listing
-DELETE /listings/:id
-Delete listing
+---
 
-For reviews
+## 🔒 Authentication Flow
 
-POST /listings/:id/reviews
-Add review
-DELETE /listings/:id/reviews/:reviewId
-Delete review
+1. User signs up or logs in
+2. Passport.js authenticates credentials
+3. Session is maintained using cookies
+4. Protected routes require login
 
-🔒 Authentication Flow
+---
 
-User signs up or logs in
-Passport.js authenticates credentials,
-Session is maintained using cookies.
-Protected routes require login
+## 🌐 Deployment
 
-🌐 Deployment 
+- Backend deployed on **Render**
+- **MongoDB Atlas** used for the database
+- Images stored on **Cloudinary**
 
-Deployed the project backend on Render,
-used MongoDB Atlas for the databse.
-Images stored on cloudinary
+---
 
+## 📷 Screenshots
+
+<img width="100%" alt="WanderLust screenshot 1" src="https://github.com/user-attachments/assets/4024795d-44e2-4612-91bd-9c5cfd4b1840" />
+<img width="100%" alt="WanderLust screenshot 2" src="https://github.com/user-attachments/assets/2061c231-ea92-44fd-a9cd-2515e31beb48" />
+<img width="100%" alt="WanderLust screenshot 3" src="https://github.com/user-attachments/assets/fbf08986-a89b-4260-bd04-e2b89ad82bcc" />
+<img width="100%" alt="WanderLust screenshot 4" src="https://github.com/user-attachments/assets/43208f70-5f1b-4045-81c1-d8d7c232439d" />
+<img width="100%" alt="WanderLust screenshot 5" src="https://github.com/user-attachments/assets/f9f86b2b-ad92-457c-94f2-36ebe6be59b4" />
+<img width="100%" alt="WanderLust screenshot 6" src="https://github.com/user-attachments/assets/2749935b-fc2a-47df-aac5-ce6906386959" />
